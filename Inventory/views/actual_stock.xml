@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="actual_stock_list_view">
+            <field name="name">actual.stock.list.view</field>
+            <field name="model">actual.stock</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sku"/>
+                    <field name="barcode" />
+                    <field name="date" />
+                    <field name="MAP" />
+                    <field name="quantity" />
+                    <field name="schedule_id" />
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="actual_stock_form_view">
+            <field name="name">actual.stock.form.view</field>
+            <field name="model">actual.stock</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sku"/>
+                                <field name="barcode" />
+                                <field name="date" />
+                            </group>
+                            <group>
+                                <field name="MAP" />
+                                <field name="quantity" />
+                                <field name="schedule_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_actual_stock" model="ir.actions.act_window">
+            <field name="name">ActualStock</field>
+            <field name="res_model">actual.stock</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

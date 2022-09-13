@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="items_list_view">
+            <field name="name">items.list.view</field>
+            <field name="model">items.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="items_name"/>
+                    <field name="sku"/>
+                    <field name="description" />
+                    <field name="barcode" />
+                    <field name="MAP" />
+
+                </tree>
+            </field>
+        </record> 
+
+
+        <record model="ir.ui.view" id="items_form_view">
+            <field name="name">items.form.view</field>
+            <field name="model">items.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="items_name"/>
+                                <field name="sku"/>
+                                <field name="description" />
+                            </group>
+                            <group>
+                                <field name="barcode" />
+                                <field name="MAP" />
+                            </group>
+                        </group>            
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+
+        <record id="action_items_details" model="ir.actions.act_window">
+            <field name="name">items</field>
+            <field name="res_model">items.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="schedule_menu_root" name="Inventory Audit"/>
+        <menuitem id="items_sub_menu" name="items" parent="schedule_menu_root" action="action_items_details"/>
+
+    </data>
+</odoo>    

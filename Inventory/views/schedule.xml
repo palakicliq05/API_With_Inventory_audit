@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="schedule_list_view">
+            <field name="name">schedule.list.view</field>
+            <field name="model">schedule.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="schedule_name"/>
+                    <field name="store"/>
+                    
+                </tree>
+            </field>
+        </record> 
+
+
+        <record model="ir.ui.view" id="schedule_form_view">
+            <field name="name">schedule.form.view</field>
+            <field name="model">schedule.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="%(action_items_details)d" type="action" class="oe_stat_buttons" icon="fa-random" string="Items" >
+                            </button>
+                            <button name="action_phase" type="object" class="oe_stat_buttons" icon="fa-th" string="Phase" >
+                            </button>
+                            <button name="action_actual_stock" type="object" class="oe_stat_buttons" icon="fa-list-alt" string="Actual Stock">
+                            </button>
+                            <button name="action_scanned" type="object" class="oe_stat_buttons" icon="fa-barcode" string="Scanned Data" >
+                            </button>   
+                        </div>
+                        <group>
+                            <group>
+                                <field name="schedule_name"/>
+                            </group>
+                            <group>
+                                <field name="store" />
+                                
+                            </group> 
+                        </group>                 
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- <record model="ir.ui.view" id="schedule_calendar_view">
+            <field name="name">schedule_calendar_view</field>
+            <field name="model">schedule.details</field>
+
+            <field name="arch" type="xml">
+                <calendar date_start="create_date">
+                    <field name="schedule_name" />
+                </calendar>
+            </field>
+        </record> -->
+
+        <record id="action_schedule_details" model="ir.actions.act_window">
+            <field name="name">schedule</field>
+            <field name="res_model">schedule.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="schedule_menu_root" name="Inventory Audit"/>
+        <menuitem id="schedule_sub_menu" name="schedule" parent="schedule_menu_root" action="action_schedule_details"/>
+        <!-- <menuitem id="schedule_details_menu" action="action_schedule_details" parent="schedule_sub_menu" /> -->
+
+    </data>
+</odoo>    

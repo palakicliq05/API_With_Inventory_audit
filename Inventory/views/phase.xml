@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="phase_list_view">
+            <field name="name">phase.list.view</field>
+            <field name="model">phase.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="phase_name"/>
+                    <field name="schedule_id" />
+                    <field name="date" />
+                </tree>
+            </field>
+        </record> 
+
+
+        <record model="ir.ui.view" id="phase_form_view">
+            <field name="name">phase.form.view</field>
+            <field name="model">phase.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_location" type="object" class="oe_stat_buttons" icon="fa-tasks" string="Locations" >
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="phase_name"/>
+                            </group>
+                            <group>
+                                <field name="schedule_id"/>
+                                <field name="date" />
+                            </group>
+                        </group>            
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+
+        <record model="ir.ui.view" id="phase_calendar_view">
+            <field name="name">phase_calendar_view</field>
+            <field name="model">phase.details</field>
+
+            <field name="arch" type="xml">
+                <calendar date_start="create_date">
+                    <field name="phase_name" />
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_phase_details" model="ir.actions.act_window">
+            <field name="name">Phase</field>
+            <field name="res_model">phase.details</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+        
+        <!-- <menuitem id="phase_menu" action="action_phase_details" parent="schedule_sub_menu" name="phase"/> -->
+
+
+    </data>
+</odoo>    

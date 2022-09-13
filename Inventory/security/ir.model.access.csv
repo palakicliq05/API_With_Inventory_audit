@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_schedule_details,schedule_details,model_schedule_details,base.group_user,1,1,1,1
+access_phase_details,phase_details,model_phase_details,base.group_user,1,1,1,1
+access_locations_details,locations_details,model_locations_details,base.group_user,1,1,1,1
+access_items_details,items_details,model_items_details,base.group_user,1,1,1,1
+access_scanned_data,scanned_data,model_scanned_data,base.group_user,1,1,1,1
+access_actual_stock,actual_stock,model_actual_stock,base.group_user,1,1,1,1
+access_data_stockreport,data_stockreport,model_data_stockreport,base.group_user,1,1,1,1
+access_api_access_token,api_access_token,model_api_access_token,base.group_user,1,1,1,1

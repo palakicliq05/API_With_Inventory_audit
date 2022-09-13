@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="locations_list_view">
+            <field name="name">locations.list.view</field>
+            <field name="model">locations.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="description"/>
+                    <field name="location_barcode"/>
+                    <field name="stock_auditor" />
+                    <field name="phase_id" />
+                </tree>
+            </field>
+        </record> 
+
+
+        <record model="ir.ui.view" id="locations_form_view">
+            <field name="name">locations.form.view</field>
+            <field name="model">locations.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                                <field name="location_barcode"/>
+                            </group>
+                            <group>
+                                <field name="stock_auditor" />
+                                <field name="phase_id" />
+                            </group>
+                        </group>            
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+
+        <record id="action_locations_details" model="ir.actions.act_window">
+            <field name="name">locations</field>
+            <field name="res_model">locations.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="schedule_menu_root" name="Inventory Audit"/>
+        <menuitem id="locations_sub_menu" name="locations" parent="schedule_menu_root" action="action_locations_details"/>
+        <!-- <menuitem id="locations_details_menu" action="action_locations_details" parent="locations_sub_menu" /> -->
+
+        
+
+    </data>
+</odoo>    

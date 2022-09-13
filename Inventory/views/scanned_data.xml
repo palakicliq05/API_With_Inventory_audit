@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="scanned_data_list_view">
+            <field name="name">scanned.data.list.view</field>
+            <field name="model">scanned.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sku"/>
+                    <field name="barcode" />
+                    <field name="date" />
+                    <field name="date"/>
+                    <field name="MAP" />
+                    <field name="quantity" />
+                    <field name="location_barcode" />
+                    <field name="schedule_id" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="scanned_data_form_view">
+            <field name="name">scanned.data.form.view</field>
+            <field name="model">scanned.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sku"/>
+                                <field name="barcode" />
+                                <field name="date" />
+                                <field name="user"/>
+                            </group>
+                            <group>
+                                <field name="MAP" />
+                                <field name="quantity" />
+                                <field name="location_barcode" />
+                                <field name="schedule_id" />
+                                </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_scanned_data" model="ir.actions.act_window">
+            <field name="name">scanned_data</field>
+            <field name="res_model">scanned.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>
